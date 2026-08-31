@@ -1,0 +1,43 @@
+services:
+
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: php_api
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - mysql
+    command: php -S 0.0.0.0:9000 -t public
+
+  mysql:
+    image: mysql:8.4
+    container_name: mysql_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: php_api
+      MYSQL_USER: php_user
+      MYSQL_PASSWORD: php_password
+      MYSQL_ROOT_PASSWORD: root_password
+    ports:
+      - "9001:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "9002:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    depends_on:
+      - mysql
+
+volumes:
+  mysql_data:

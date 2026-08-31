@@ -1,0 +1,13 @@
+composer require firebase/php-jwt
+composer require vlucas/phpdotenv
+composer require fidele007/bakong-khqr-php
+composer require fidele007/bakong-khqr-php:^1.2
+
+JWT_SECRET=your-super-secret-key-change-this
+ACCESS_TOKEN_EXPIRE=900
+REFRESH_TOKEN_EXPIRE=604800
+
+REFRESH_COOKIE_NAME=refresh_token
+COOKIE_SECURE=false
+COOKIE_HTTP_ONLY=true
+COOKIE_SAME_SITE=Strict

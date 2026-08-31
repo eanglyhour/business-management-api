@@ -1,0 +1,33 @@
+# Environment / Secrets
+.env
+.env.*
+!.env.example
+
+# Composer
+/vendor/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# PHP
+.phpunit.result.cache
+
+# Docker
+docker-compose.override.yml
+
+# Temporary files
+*.tmp
+*.temp
+*.cache

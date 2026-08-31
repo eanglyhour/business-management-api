@@ -1,0 +1,7 @@
+{
+    "require": {
+        "firebase/php-jwt": "^7.1",
+        "vlucas/phpdotenv": "^5.6",
+        "fidele007/bakong-khqr-php": "1.2"
+    }
+}
